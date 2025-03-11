@@ -1,0 +1,5 @@
+# Please link to ./.env before docker-compose build.
+#
+# ```
+# ln -s env-sample .env
+# ```

@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+    env_file: .env
+    ports:
+      - "80:80"
+    volumes:
+      - data:/usr/share/nginx/html
+
+  filebrowser:
+    build:
+      context: ./filebrowser
+    env_file: .env
+    ports:
+      - "90:80"
+    volumes:
+      - data:/html
+      - fbconf:/conf
+
+volumes:
+  data:
+  fbconf:
